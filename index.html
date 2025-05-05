@@ -15,6 +15,8 @@
           <template>
 
               <style>
+                :host { display: block; position: relative; contain: content; }
+                :host([hidden]) { display: none; }
                 body {
                   border-radius: 1px;
                   border-color: aliceblue;
@@ -23,6 +25,11 @@
                   padding: .5rem;
                 }
               </style>
+          
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown.min.css" />
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github.min.css" />
+              <link rel="stylesheet" media="(prefers-color-scheme:dark)" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github-dark.min.css" />
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css" />
           
             </template>
       </zero-md>
