@@ -166,6 +166,13 @@ html {
 }
 
 .sunix-content {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .5rem;
+    max-width: 1280px;
+    padding-left: .5rem;
+    padding-right: .5rem;
     width: 100%
 }
 
