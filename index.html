@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script
+          type="module"
+          src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"
+        ></script>
         <title>
             IsAuthorizedV2
         </title>
         <link href="./public/assets/favicon.ico" rel="icon" type="image/x-icon">
-        <link rel="stylesheet" href="https://isauthorized.sunix.dev/public/style.css">
       </head>
-      <body>
-        <div class="container">
-          <div class="content norm-border">
-            test
-          </div>
-        </div>
+      <body style="padding: 2rem">
+        <zero-md src="./public/assets/test.md">
+          <template>
+
+              <style>
+                :host { display: block; position: relative; contain: content; }
+                :host([hidden]) { display: none; }
+              </style>
+          
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown.min.css" />
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github.min.css" />
+              <link rel="stylesheet" media="(prefers-color-scheme:dark)" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github-dark.min.css" />
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css" />
+          
+            </template>
+      </zero-md>
       </body>
 </html>
