@@ -155,12 +155,37 @@ html {
         color: rgb(243 244 246 / var(--tw-text-opacity))
     }
 }
-
-.sunix-content-menu {
-    width:50%;
-    align-self: center;
+.sunix-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .5rem;
+    max-width: 1280px;
+    padding-left: .5rem;
+    padding-right: .5rem
 }
 
-.jcenter {
-    justify-content: center;
+.sunix-content {
+    width: 100%
+}
+
+@media (min-width: 1024px) {
+    .sunix-content {
+        padding-right:264px
+    }
+}
+
+.sunix-content zero-md {
+    width: 100%;
+    border-radius: .25rem;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(229 231 235 / var(--tw-border-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+    .sunix-content zero-md {
+        --tw-border-opacity: 1;
+        border-color: rgb(31 41 55 / var(--tw-border-opacity))
+    }
 }
