@@ -1,6 +1,6 @@
 [package]
-name = "mach-mach/isauthorizedv2"
-version = "0.1.0"
+name = "csunix/isauthorized"
+version = "2.0.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
