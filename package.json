@@ -1,0 +1,23 @@
+{
+  "name": "isauthorizedv2",
+  "version": "1.0.0",
+  "description": "Clean, simple & fast way to handle your permissions in game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csunix/IsAuthorizedV2.git"
+  },
+  "author": "Nicholas Elfstrom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csunix/IsAuthorizedV2/issues"
+  },
+  "homepage": "https://github.com/csunix/IsAuthorizedV2#readme",
+  "dependencies": {
+    "markdown-js": "^0.0.4",
+    "zero-md": "^3.1.7"
+  }
+}
