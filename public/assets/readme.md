@@ -1,1 +1,0 @@
-- [IsAuthorized V2](isauthorized.md)
