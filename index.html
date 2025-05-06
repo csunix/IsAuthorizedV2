@@ -82,8 +82,25 @@
                 </div>
             </div>
             <div class="content-topic">
+                <br>
+                <div class="warning">
+                    <div class="warning-svg">
+                        <svg fill="#FFB200" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+                    </div>
+                    <span>
+                        <div style="padding-left: 16px;">
+                            <span class="warning-title">
+                                Early Release
+                            </span>
+                        </div>
+                        <div style="padding-left: 16px; opacity: 50%; font-weight: 400;">
+                            <span>This version has just been released. Potential issues may occur and there is currently a lack of integration for TypeScript and other programs. Please be patient and utilize the GitHub to report & contribute.</span>
+                        </div>
+                    </span>
+                </div>
+                <br>
                 <p>Clean, simple & fast way to handle your permissions in game.</p>
-                <h2><a name="declare-overview">Overview</a></h2>
+                <h2><a name="overview">Overview</a></h2>
                 <p>
                     IsAuthorized is a lightweight declarative-wrote library which allows for simple and fast permissions checking,
                     reliable for a variety of projects. The library boasts customizable, and is easily accessible for all developer
@@ -96,47 +113,39 @@
                         &nbsp;lua
                     </span>
                     <span class="code lang-lua bottommost">
-                        <span id="function">local&nbsp;</span>
-                        IsAuthorized =&nbsp;
-                        <span id="function">require</span>
-                        (
-                            <span id="string"><u>path.to.isauthorized</u></span>
-                        )
+                        <div class="lang-lua" style="display: inline;">
+                            <span id="function">local </span>
+                            IsAuthorized = 
+                            <span id="function">require</span>(<span id="string"><u>path.to.isauthorized</u></span>)
+                            <br><br>
+                            <span id="comment">-- check if a player is in the main group and is on the "Prisoner" team.</span>
+                            <br>
+                            <span id="function">local </span>PlayerHasPermissions = IsAuthorized(Player, {
+                                <span id="string">"Team:Prisoner"</span>,
+                                <span id="string">"Group:Main"</span>
+                            })
+                            <br><br>
+                            <span id="function">if</span> PlayerHasPermissions  <span id="function">then</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span id="function">print</span>(<span id="string">"This user has permissions!"</span>)
+                            <br>
+                            <span id="function">end</span>
+                        </div>
                     </span>
                 </div>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
-                <p>TEST</p>
+
+                <p>
+                    This library has been created with large scale comparison in mind, with a focus on performance at the core of the package.
+                </p>
+                <br>
+                <h2><a name="installation">Installation</a></h2>
+                <p>
+                    IsAuthorized is available for Wally, or can be downloaded manually using a CLI.
+                </p>
             </div>
         </div>
         <div class="menu tight">
-            <a class="topmost button sidebar-nav" href="https://google.com">Overview</a>
-            <a class="middle button sidebar-nav">Hello</a>
+            <a class="topmost button sidebar-nav" href="#overview">Overview</a>
+            <a class="middle button sidebar-nav" href="#installation">Installation</a>
             <a class="bottommost button sidebar-nav">Hello</a>
         </div>
     </div>

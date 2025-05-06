@@ -1,16 +1,14 @@
 :root {
     --code-lua-string: #A5D6FF;
     --code-lua-function: #FF6877;
+    --code-lua-comment: #434E60;
     --member-offset-scale: 200px
 }
 
 html {
     background-color: #0D1117;
     color: #F0F6FC;
-}
-
-body {
-    position: relative;
+    scroll-behavior: smooth;
 }
 
 h2 {
@@ -52,8 +50,9 @@ span.code {
     font-size: 14px;
     background-color: #151B23;
     border-radius: 7.5px;
-    display: flex;
     padding: 16px;
+    line-height: 1.45;
+    display: flex;
 }
 
 span.code.header {
@@ -74,17 +73,56 @@ span.bottommost {
     border-top-right-radius: 0px;
 }
 
-span.code.lang-lua > #string {
+div.lang-lua > #string {
     color: var(--code-lua-string);
 }
 
-span.code.lang-lua > #function {
+div.lang-lua > #comment {
+    color: var(--code-lua-comment);
+    font-style: italic;
+}
+
+div.lang-lua > #function {
     color: var(--code-lua-function);
 }
 
 span.code > .reference {
     display: flex;
     background-color: #181F28;
+}
+
+div.warning {
+    padding-right: 5rem;
+    padding-left: 16px;
+    display: flex;
+    margin: 0 auto;
+    z-index: 1;
+    background: transparent;
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-left-color: #FFB200;
+}
+
+div.warning > p {
+    z-index: 10;
+    display: flex;
+    margin-left: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+span.warning-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFB200;
+}
+
+.warning-svg {
+    z-index: 10;
+    max-width: fit-content;
+    width: fit-content;
+    vertical-align: middle;
+    align-content: center;
 }
 
 .markdown-body {
@@ -152,12 +190,14 @@ span.code > .reference {
 
 @keyframes menu-hover {
     to {
-        background-color: #15191E;
+        background-color: #262E38;
     }
 }
 
 .menu a:hover {
-    background-color: red;
+    animation-name: menu-hover;
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
 }
 
 .menu.tight {
@@ -220,6 +260,7 @@ span.code > .reference {
     margin-left: 2rem;
     margin-right: 1vh;
     max-width: 1500px;
+    z-index: 10;
 }
 
 .content-no-width {
@@ -309,6 +350,7 @@ span.code > .reference {
 }
 
 .menu {
+    z-index: 10;
     margin-top: 1rem;
     margin-bottom: 5rem;
     width: 40vh;
@@ -335,13 +377,10 @@ span.code > .reference {
     border-radius: 10px;
 }
 
-#declare-overview {
-    line-height: inherit;
-}
-
 #wrap-display {
     display: flex;
     margin: 0 auto;
+    z-index: 1;
 }
 
 .content-page {
