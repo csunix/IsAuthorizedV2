@@ -21,6 +21,7 @@ local Promise = require(script.Parent.promise)
 local IsAuthorized = {}
 IsAuthorized.__index = IsAuthorized -- ?
 IsAuthorized.Groups = {}
+IsAuthorized.CustomFunctions = nil
 IsAuthorized.RequireAllKeyword = "RequireAll"
 IsAuthorized.AllKeyword = "All"
 IsAuthorized.NegateCharacter = "!"
@@ -49,9 +50,32 @@ end
 
 -- Find and return a Function module if it exists.
 local function GetFunction(functionName: string)
+	if IsAuthorized.CustomFunctions and IsAuthorized.CustomFunctions:FindFirstChild(functionName) then
+		return require(IsAuthorized.CustomFunctions:FindFirstChild(functionName))
+	end
+
 	if Functions:FindFirstChild(functionName) then
 		return require(Functions[functionName])
 	end
+end
+
+-- Find or create the custom functions folder.
+local function FindOrCreateCustomFunctions()
+	local NAME = "AuthorizeFunctions"
+
+	for _, descendant in ReplicatedStorage:GetDescendants() do
+		if descendant:IsA('Folder') and descendant.Name == NAME then
+			IsAuthorized.CustomFunctions = descendant
+			return
+		end
+	end
+
+	local Folder = Instance.new("Folder")
+	Folder.Name = NAME
+	IsAuthorized.CustomFunctions = Folder
+	Folder.Parent = ReplicatedStorage
+
+	return
 end
 
 -- Find the available groups.
@@ -173,6 +197,10 @@ end
 function IsAuthorized:__call(...)
 	if not next(IsAuthorized.Groups) then
 		GetGroups()
+	end
+
+	if not IsAuthorized.CustomFunctions then
+		FindOrCreateCustomFunctions()
 	end
 
 	local Player: Player, Permission: Permission

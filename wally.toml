@@ -2,7 +2,7 @@
 name = "csunix/isauthorized"
 description = "Clean, simple & fast way to handle your permissions in game."
 license = "MIT"
-version = "2.0.1"
+version = "2.0.2"
 include = ["LICENSE", "lib", "default.project.json"]
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
