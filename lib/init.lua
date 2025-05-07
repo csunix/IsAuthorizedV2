@@ -16,7 +16,7 @@ local Players = game:GetService("Players")
 -- //       DEPENDENCIES
 ---------------------------------------
 local Functions = script.Functions
-local Promise = require(ReplicatedStorage.Packages.promise)
+local Promise = require(script.Parent.promise)
 
 local IsAuthorized = {}
 IsAuthorized.__index = IsAuthorized -- ?
@@ -74,13 +74,17 @@ local function EvaluatePermissionsQuery(player: Player, strand: string)
 	local Keyword = string.split(strand, ":")[1]
 	local Packet = IsAuthorized.StandardRequestPacket
 
+	Packet.IsNegated = string.sub(strand, 1, 1) == IsAuthorized.NegateCharacter
+
+	if Packet.IsNegated then
+		Keyword = string.sub(Keyword, 2)
+	end
+
 	local GroupFunction = GetFunction(Keyword or "")
 	if not GroupFunction then
 		warn(`No Function called '{Keyword}' found in functions, automatically returning as false.`)
 		return false
 	end
-
-	Packet.IsNegated = string.sub(strand, 1, 1) == IsAuthorized.NegateCharacter
 
 	if GroupFunction.Realm ~= "Shared" then
 		local IsClient = RunService:IsClient()

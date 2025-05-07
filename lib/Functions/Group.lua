@@ -23,10 +23,17 @@ return {
 		assert(Group, "Expected Group in Group Function, got null." .. debug.traceback())
 		assert(Groups[Group], `Expected valid group, could not find {Group} in Groups.\n{debug.traceback()}`)
 
+		local ShouldNegate = RequestPacket.IsNegated
+
 		if not RankRange or RankRange == "*" then
 			local GroupId = Groups[Group]
+			local Result = Player:IsInGroup(GroupId)
 
-			return Player:IsInGroup(GroupId)
+			if ShouldNegate then
+				return not Result
+			else
+				return Result
+			end
 		end
 
 		local function GetGroupRank(Player, GroupId)
@@ -84,9 +91,12 @@ return {
 		end
 
 		local GroupId = Groups[Group]
-		local ShouldNegate = RequestPacket.IsNegated
-
 		local Result = IsInRange(GetGroupRank(Player, GroupId))
-		return ShouldNegate and not Result or Result
+
+		if ShouldNegate then
+			return not Result
+		else
+			return Result
+		end
 	end,
 }

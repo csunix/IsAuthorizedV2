@@ -26,6 +26,10 @@ return {
 		local ShouldNegate = RequestPacket.IsNegated
 
 		local Result = Player.Team == Teams[Team]
-		return ShouldNegate and not Result or Result
+		if ShouldNegate then
+			return not Result
+		else
+			return Result
+		end
 	end,
 }
