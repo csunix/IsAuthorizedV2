@@ -1,7 +1,11 @@
 [package]
 name = "csunix/isauthorized"
+description = "Clean, simple & fast way to handle your permissions in game."
+license = "MIT"
 version = "2.0.0"
+include = ["LICENSE", "lib", "default.project.json"]
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
+promise = "evaera/promise@4.0.0"
